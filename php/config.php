@@ -1,0 +1,4 @@
+<?php
+
+  $EMTUser = "YOUR EMT USER HERE";
+  $EMTPass = "YOUR EMT PASSWORD HERE";
