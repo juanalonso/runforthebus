@@ -115,7 +115,7 @@
       return $NOBUS;
     } 
 
-    return floor(255 * ($value - $tmin) / ($tmax - $tmin));
+    return floor(150 * ($value - $tmin) / ($tmax - $tmin));
   }
 
 
