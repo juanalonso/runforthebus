@@ -18,6 +18,12 @@
   //EMT timestamp when the bus is far away
   $NOBUS = 999999;
 
+  //Max value for the digital pin.
+  //255 for 5v
+  //170 fro 3.3v
+  //Less than 170 to allow some margin
+  $maxVoltage = 120;
+
 
   /*
 
@@ -109,13 +115,13 @@
   //Scale the waiting time for arduino (0..255 and 999999)
   function returnValue($value) {
 
-    global $tmin, $tmax, $NOBUS;
+    global $tmin, $tmax, $NOBUS, $maxVoltage;
 
     if ($value == $NOBUS) {
       return $NOBUS;
     } 
 
-    return floor(150 * ($value - $tmin) / ($tmax - $tmin));
+    return floor($maxVoltage * ($value - $tmin) / ($tmax - $tmin));
   }
 
 
